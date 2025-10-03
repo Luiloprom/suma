@@ -2,6 +2,9 @@ package es.etg.dam;
 
 public class Suma {
 
+    public static final String MSG_ERROR = "Solo se permiten valores numericos";
+    public static final String MSG_ERROR2 = "Hay que insertar dos parametros";
+
     public static void main(String[] args) {
 
         try {
@@ -20,7 +23,9 @@ public class Suma {
             System.out.println(suma);
 
         } catch (NumberFormatException e) {
-            System.out.println("Solo se permiten valores numericos");
+            System.out.println(MSG_ERROR);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println(MSG_ERROR2);
         }
     }
 }

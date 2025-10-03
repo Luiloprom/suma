@@ -6,11 +6,11 @@ import java.io.InputStreamReader;
 
 public class App {
 
-    public static String ruta = "es.etg.dam.suma";
+    public static String ruta = "es.etg.dam.Suma";
 
     public static void main(String[] args) {
 
-        final String[] comando = { "java", "-cp", "target/classes", ruta, "1", "3" };
+        final String[] comando = { "java", "-cp", "target/classes", ruta, "1" };
 
         try {
 
