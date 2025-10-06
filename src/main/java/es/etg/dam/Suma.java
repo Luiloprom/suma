@@ -1,5 +1,10 @@
 package es.etg.dam;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Suma {
 
     public static final String MSG_ERROR = "Solo se permiten valores numericos";
@@ -20,12 +25,24 @@ public class Suma {
                 suma += i;
             }
 
+            File salida = new File("output.txt");
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(salida));
+
+            writer.write(suma);
+
+            writer.close();
+
             System.out.println(suma);
 
         } catch (NumberFormatException e) {
             System.out.println(MSG_ERROR);
+            System.exit(1);
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println(MSG_ERROR2);
+            System.exit(1);
+        } catch (IOException e) {
+
         }
     }
 }

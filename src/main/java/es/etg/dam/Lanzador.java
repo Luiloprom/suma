@@ -4,13 +4,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class App {
+public class Lanzador {
 
     public static String ruta = "es.etg.dam.Suma";
 
     public static void main(String[] args) {
 
-        final String[] comando = { "java", "-cp", "target/classes", ruta, "1" };
+        final String[] comando = { "java", "-cp", "target/classes", ruta, "a", "b" };
 
         try {
 
@@ -31,6 +31,7 @@ public class App {
                 System.out.println(output);
                 System.exit(0);
             } else {
+                System.out.println(output);
                 System.exit(1);
             }
 
