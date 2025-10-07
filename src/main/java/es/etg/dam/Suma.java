@@ -31,13 +31,9 @@ public class Suma {
                 writer.write(String.valueOf(suma));
 
             } catch (NumberFormatException e) {
-                writer.write(MSG_ERROR_FORMATO);
-                writer.close();
-                System.exit(1);
+                writeError(writer, MSG_ERROR_FORMATO);
             } catch (ArrayIndexOutOfBoundsException e) {
-                writer.write(MSG_ERROR_PARAMETROS);
-                writer.close();
-                System.exit(1);
+                writeError(writer, MSG_ERROR_PARAMETROS);
             }
         } catch (IOException e) {
             System.out.println(MSG_ERROR_ESCRITURA);
@@ -48,5 +44,11 @@ public class Suma {
 
     private static int parsear(String s) {
         return Integer.parseInt(s);
+    }
+
+    private static void writeError(BufferedWriter writer, String s) throws IOException {
+        writer.write(s);
+        writer.flush();
+        System.exit(1);
     }
 }
