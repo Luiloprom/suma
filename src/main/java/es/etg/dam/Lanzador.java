@@ -6,11 +6,11 @@ import java.io.InputStreamReader;
 
 public class Lanzador {
 
-    public static String ruta = "es.etg.dam.Suma";
+    public static String RUTA = "es.etg.dam.Suma";
 
     public static void main(String[] args) {
 
-        final String[] comando = { "java", "-cp", "target/classes", ruta, "a", "b" };
+        final String[] comando = { "java", "-cp", "target/classes", RUTA, "1", "3" };
 
         try {
 
@@ -27,7 +27,7 @@ public class Lanzador {
 
             int exitVal = process.waitFor();
             if (exitVal == 0) {
-                System.out.println("Success!");
+                System.out.println("Exito!");
                 System.out.println(output);
                 System.exit(0);
             } else {
